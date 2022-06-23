@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
+  def new
+    @booking = Booking.new
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @room = Room.find(params[:room_id])
@@ -11,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.room = @room
     @booking.user = @user
     if @booking.save
-      redirect_to room_path(@room), notice: "Congratulations ! Your booking has come through!"
+      redirect_to room_path(@room), notice: "Congratulations ! Your booking has gone through!"
     else
       redirect_to room_path(@room), alert: "Error ! Your booking could not be processed."
     end
