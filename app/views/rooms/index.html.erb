@@ -1,0 +1,18 @@
+<h2>All Rooms</h2>
+
+<div class="container">
+  <% @rooms.each do |room| %>
+    <div class="room-card">
+      <img src= <%= cl_image_path(room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">
+      <div class="room-infos">
+        <h3><%= room.hotel.name %></h3>
+        <p><%=room.hotel.address.split.last%> </p>
+        <p><%= room.capacity %> personnes</p>
+          <div class="booking-price-btn">
+            <p>€<%= room.price_per_night%></p>
+            <%= link_to "Book", room_path(room), class: "btn btn-primary" %>
+          </div>
+      </div>
+    </div>
+  <%end  %>
+</div>
