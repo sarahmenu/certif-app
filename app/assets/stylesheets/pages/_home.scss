@@ -1,11 +1,16 @@
 // Specific CSS for your home-page
 #homepage {
   height: 90vh;
-  background-image: url("https://res.cloudinary.com/dpspcjurv/image/upload/v1656001028/urip-dunker-cTfcPsRQv4Q-unsplash_ocqchd.jpg");
-  background-size: 100%;
+  background-image: url("https://res.cloudinary.com/dpspcjurv/image/upload/v1656012999/david-lezcano-mNCFOaaLu5o-unsplash_1_fupkgl.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   p {
     margin-left: 100px;
+    color: black;
+    font-size: 20px;
+
   }
 
   .btn {
@@ -14,8 +19,12 @@
   }
 
   h2 {
+    margin-left: 100px;
+    margin-bottom: 20px;
+    color: black;
     margin-top: 0 !important;
     padding-top: 40px;
+    font-size: 40px;
   }
   body {
     margin-bottom: 0 !important;
