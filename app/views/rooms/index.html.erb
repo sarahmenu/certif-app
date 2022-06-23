@@ -1,7 +1,7 @@
 <div id="rooms-index">
   <h2>Rooms available to rent</h2>
 
-  <div class="container">
+  <div class="wrapper">
     <% @rooms.each do |room| %>
       <div class="room-card">
         <img src= <%= cl_image_path(room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">

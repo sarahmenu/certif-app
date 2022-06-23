@@ -1,8 +1,15 @@
 #rooms-index {
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0 auto;
+  }
   .room-card {
     overflow: hidden;
     height: 270px;
-    width: 800px;
+    width: 700px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
@@ -30,7 +37,6 @@
     margin-bottom: 0;
     margin-top: 8px;
   }
-
 
   .room-infos {
     display: flex;
