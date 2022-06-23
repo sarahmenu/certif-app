@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  .btn {
+    margin-right: 20px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +16,8 @@
 
 #logo {
   height: 50px;
+}
+
+.btn {
+
 }
