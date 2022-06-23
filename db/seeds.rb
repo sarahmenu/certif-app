@@ -24,15 +24,22 @@ puts " Creating Hotels"
 
 puts " Creating Hotel 1"
 hotel_1 = Hotel.create(
-  name: "Nantes Hotel",
+  name: "Cocoon",
   address: "10 Passage de la Poule Noire, 44000 Nantes"
 )
 
 puts " Creating Hotel 2"
 hotel_2 = Hotel.create(
   name: "The Chill Place",
-  address: "3 Rue de Valmy, 44000 Nantes"
+  address: "3 Rue de Valmy, 75000 Paris"
 )
+
+puts " Creating Hotel 3"
+hotel_3 = Hotel.create(
+  name: "St George Hotel",
+  address: "4 Rue du Couëdic, 06000 Nice"
+)
+
 
 puts " Creating Rooms"
 puts " Creating Room 1"
@@ -48,7 +55,7 @@ puts " Creating Room 2"
 room_2 = Room.create(
   price_per_night: 80,
   capacity: 3,
-  hotel: hotel_1
+  hotel: hotel_2
 )
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1655988666/triple-bed-2_jsvx3e.jpg")
 room_2.photo.attach(io: file, filename: 'triple-bed-1', content_type: 'image/jpg')
@@ -57,7 +64,7 @@ puts " Creating Room 3"
 room_3 = Room.create(
   price_per_night: 45,
   capacity: 2,
-  hotel: hotel_2
+  hotel: hotel_3
 )
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1655988671/double-bed-1_ju2ypj.jpg")
 room_3.photo.attach(io: file, filename: 'double-bed-2', content_type: 'image/jpg')
