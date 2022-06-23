@@ -1,0 +1,20 @@
+<div id="room-show">
+
+  <h2><%=@room.hotel.name%></h2>
+  <%= link_to "Return", rooms_path, class: "btn btn-primary" %>
+
+  <div class="container">
+    <div class="show-room-card">
+      <img src= <%= cl_image_path(@room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">
+      <div class="show-room-infos">
+        <p><%= @room.capacity %> personnes</p>
+        <p><%= @room.price_per_night %></p>
+      </div>
+    </div>
+
+    <div>
+    Booking form
+    </div>
+
+  </div>
+</div>
