@@ -78,5 +78,5 @@ booking_1 = Booking.create!(
   user: user_1,
   room: room_1,
   starts_at: DateTime.parse("01/07/2022"),
-  ends_at: DateTime.parse("03/07/2023")
+  ends_at: DateTime.parse("03/07/2022")
 )
