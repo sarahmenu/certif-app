@@ -13,7 +13,12 @@
     </div>
 
     <div>
-    Booking form
+      <%= simple_form_for [@room, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :starts_at, html5: true, label: 'Début' %>
+        <%= f.input :ends_at, html5: true, label: 'Fin' %>
+        <%= f.button :submit, 'Book!', class: "btn-primary"%>
+      <% end %>
     </div>
 
   </div>
