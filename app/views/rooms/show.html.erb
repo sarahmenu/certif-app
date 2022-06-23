@@ -12,14 +12,27 @@
       </div>
     </div>
 
-    <div>
-      <%= simple_form_for [@room, @booking] do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :starts_at, html5: true, label: 'Début' %>
-        <%= f.input :ends_at, html5: true, label: 'Fin' %>
-        <%= f.button :submit, 'Book!', class: "btn-primary"%>
-      <% end %>
+    <div class="container">
+      <div class="form-wrapper">
+        <h2>Book a flat</h2>
+        <%= simple_form_for [@room, @booking] do |f| %>
+          <%= f.input :starts_at, label: "Select your dates:",
+                                  as: :string,
+                                  required: false,
+                                  input_html: { id: "range_start", class: "d-none"} %>
+          <%= f.input :ends_at, label: false,
+                                as: :string,
+                                required: false,
+                                input_html: { id: "range_end", class: "d-none" } %>
+          <%= f.button :submit, "Book", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
 
   </div>
+
+  <div id="booking-form-div"
+     data-bookings="<%= @bookings_dates.to_json %>">
+  </div>
+
 </div>
