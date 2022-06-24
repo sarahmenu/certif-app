@@ -1,34 +1,44 @@
 <div id="room-show">
 
-  <h2><%=@room.hotel.name%></h2>
+  <h2>Book with <strong><%=@room.hotel.name%></strong> in <strong><%=@room.hotel.address.split.last%></strong></h2>
   <%= link_to "Return", rooms_path, class: "btn btn-primary" %>
 
   <div class="container">
     <div class="show-room-card">
       <img src= <%= cl_image_path(@room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">
       <div class="show-room-infos">
-        <p><%= @room.capacity %> personnes</p>
-        <p><%= @room.price_per_night %></p>
+        <% if @room.capacity == 2 %>
+          <h3>Double Bedroom </h3>
+        <% else %>
+          <h3>Triple Bedroom</h3>
+        <% end %>
+        <hr/>
+        <p><i class="fas fa-user-alt"></i> x<%= @room.capacity %></p>
+        <p><i class="fas fa-map-marker-alt"></i>  <%=@room.hotel.address%> </p>
+        <hr/>
+        <p>Coffee/ tea making facilities</p>
+        <p>Walking shower </p>
+        <p>TV </p>
+        <hr/>
+        <p id="show-price">For 1 night |<strong> €<%= @room.price_per_night%></strong></p>
       </div>
     </div>
-
-    <div class="container">
-      <div class="form-wrapper">
-        <h2>Book a flat</h2>
-        <%= simple_form_for [@room, @booking] do |f| %>
-          <%= f.input :starts_at, label: "Select your dates:",
-                                  as: :string,
-                                  required: false,
-                                  input_html: { id: "range_start", class: "d-none"} %>
-          <%= f.input :ends_at, label: false,
+    <div class="form-wrapper">
+      <h3> Select your dates</h3>
+      <hr/>
+      <%= simple_form_for [@room, @booking] do |f| %>
+        <%= f.input :starts_at, label: false,
                                 as: :string,
                                 required: false,
-                                input_html: { id: "range_end", class: "d-none" } %>
-          <%= f.button :submit, "Book", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+                                input_html: { id: "range_start", class: "d-none"} %>
+        <%= f.input :ends_at, label: false,
+                              as: :string,
+                              required: false,
+                              input_html: { id: "range_end", class: "d-none" } %>
+         <hr/>
+        <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+      <% end %>
     </div>
-
   </div>
 
   <div id="booking-form-div"
