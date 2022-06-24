@@ -7,8 +7,10 @@
         <img src= <%= cl_image_path(room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">
         <div class="room-infos">
           <h3><%= room.hotel.name %></h3>
+          <hr/>
           <p><i class="fas fa-map-marker-alt"></i>  <%=room.hotel.address.split.last%> </p>
-          <p><i class="fas fa-user-alt"></i> x<%= room.capacity %></p>
+          <p id="card-padding"><i class="fas fa-user-alt"></i> x<%= room.capacity %></p>
+           <hr/>
             <div class="booking-price-btn">
               <p>For 1 night |<strong> €<%= room.price_per_night%></strong></p>
               <%= link_to "See Details", room_path(room), class: "btn btn-primary" %>

@@ -7,12 +7,25 @@
     <div class="show-room-card">
       <img src= <%= cl_image_path(@room.photo.key, height: 300, width: 400, crop: :fill) %> alt="...">
       <div class="show-room-infos">
-        <p><%= @room.capacity %> personnes</p>
-        <p><%= @room.price_per_night %></p>
+        <% if @room.capacity == 2 %>
+          <h3>Double Bedroom </h3>
+        <% else %>
+          <h3>Triple Bedroom</h3>
+        <% end %>
+        <hr/>
+        <p><i class="fas fa-user-alt"></i> x<%= @room.capacity %></p>
+        <p><i class="fas fa-map-marker-alt"></i>  <%=@room.hotel.address%> </p>
+        <hr/>
+        <p>Coffee/ tea making facilities</p>
+        <p>Walking shower </p>
+        <p>TV </p>
+        <hr/>
+        <p id="show-price">For 1 night |<strong> €<%= @room.price_per_night%></strong></p>
       </div>
     </div>
     <div class="form-wrapper">
       <h3> Select your dates</h3>
+      <hr/>
       <%= simple_form_for [@room, @booking] do |f| %>
         <%= f.input :starts_at, label: false,
                                 as: :string,

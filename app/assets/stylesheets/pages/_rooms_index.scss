@@ -49,7 +49,6 @@
       justify-content: space-between;
       align-items: center;
       flex-grow: 1;
-      padding-top: 80px;
       p {
         font-size: 20px;
       }
@@ -58,11 +57,31 @@
         height: 40px;
       }
     }
+
+    #card-padding{
+      padding-bottom: 50px;
+    }
   }
 
   h2 {
     margin-left: 100px;
     margin-bottom: 20px;
     margin-top: 40px ;
+    color: $blue;
+  }
+
+  h3 {
+    color: $blue;
+  }
+
+  hr {
+    border:none;
+    border-top:1px dashed $blue;
+    color:#fff;
+    background-color: transparent;
+    justify-self: center;
+    height:1px;
+    width:100%;
+    margin: 10px auto;
   }
 }
