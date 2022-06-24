@@ -133,10 +133,5 @@ room_6 = Room.create(
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1656055697/triple-bed-3_c8bwnk.jpg")
 room_6.photo.attach(io: file, filename: 'triple-bed-4', content_type: 'image/jpg')
 
-puts " Creating Bookings"
-booking_1 = Booking.create!(
-  user: user_1,
-  room: room_1,
-  starts_at: DateTime.parse("01/07/2022"),
-  ends_at: DateTime.parse("03/07/2022")
-)
+
+
