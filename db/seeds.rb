@@ -40,6 +40,18 @@ hotel_3 = Hotel.create(
   address: "4 Rue du Couëdic, 06000 Nice"
 )
 
+# puts " Creating Hotel 1"
+# hotel_1 = Hotel.create(
+#   name: "Cocoon",
+#   address: "10 Passage de la Poule Noire, 44000 Nantes"
+# )
+
+# puts " Creating Hotel 1"
+# hotel_1 = Hotel.create(
+#   name: "Cocoon",
+#   address: "10 Passage de la Poule Noire, 44000 Nantes"
+# )
+
 
 puts " Creating Rooms"
 puts " Creating Room 1"
@@ -78,6 +90,8 @@ room_4 = Room.create(
 )
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1655988663/triple-bed-1_rqgjxn.jpg")
 room_4.photo.attach(io: file, filename: 'triple-bed-2', content_type: 'image/jpg')
+
+
 
 
 puts " Creating Bookings"
